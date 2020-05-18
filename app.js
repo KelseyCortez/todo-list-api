@@ -47,27 +47,22 @@ app.get('/api/todos/:id', (req, res) => {
 // POST /api/todos
 
 app.post('/api/todos', (req, res) => {
-  if (req.body.todo) {
-    const maxId = todoList.reduce((max, currentTodo) => {
-      if (currentTodo.id > max) {
-        max = currentTodo.id;
-      }
-      return max;
-    }, 0);
-
-    const newToDo = {
-      id: maxId + 1,
-      todo: req.body.todo,
-    };
-    todoList.push(newToDo);
-    res.json(newToDo);
-  } else {
+  if (!req.body || !req.body.todo) {
     res.status(400).json({
-      error: 'Provide todo text'
-
-
+      error: 'Provide to do text',
     });
+    return;
   }
+  const prevId = todoList.reduce((prev, curr)=> {
+    return prev > curr.id ? prev : curr.id;
+  }, 0);
+  
+  const newToDo = {
+    id: prevId + 1,
+    todo: req.body.todo,
+  };
+  todoList.push(newToDo);
+  res.json(newToDo);
 });
 
 // PUT /api/todos/:id
