@@ -30,8 +30,7 @@ let todoList = [
 // GET /api/todos
 
 app.get('/api/todos/', (req, res) => {
-  console.log('got a request');
-  res.json(todoList);
+  res.send(todoList);
 });
 
 // GET /api/todos/:id
@@ -44,6 +43,7 @@ app.get('/api/todos/:id', (req, res) => {
   const status = Object.keys(todo).length ? 200 : 404;
   res.status(status).json(todo);
 });
+
 // POST /api/todos
 
 app.post('/api/todos', (req, res) => {

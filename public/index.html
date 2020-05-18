@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <title>To Do</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="title">To Do List</h1>
+            <div class="card">
+                <div class="card-body">
+                  <p class="card-text">Add, delete, or modify your list!</p>
+                </div>
+              </div>
+            <ul class="list js-todos"></ul>
+            <form class="form js-add-form" action="#">
+                <input type="text" class="new-todo-text js-input">
+                <button class="button add" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

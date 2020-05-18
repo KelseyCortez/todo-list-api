@@ -1,0 +1,32 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(48, 48, 110);
+    font-family: 'DM Mono', monospace;
+}
+
+body, * {
+    box-sizing: inherit;
+}
+
+div {
+    margin-left: auto;
+    margin-right: auto;
+    border: transparent;
+}
+
+.title {
+    margin-left: auto;
+    margin-right: auto;
+}
+.card {
+    background-color: rgb(194, 194, 229);
+}
+
+.card-text {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
