@@ -2,7 +2,7 @@ function getToDo(todoData) {
     const html = `
     <li class="todo-item js todo-item" data id="${todoData.id}">
         <div class="form">
-        <input type="text" class="todo-form-input js-todo-item-${todoData.id}" value="${todoData.todo}" />
+        <input type="text" class="todo-form-input js-todo-item-${todoData.id}" value="${todoData.todo}"/>
         <button class="button save js-save-button" data-id="${todoData.id}" type="submit">Save</button>
       </div>
       <button class="button delete js-delete-button" data-id="${todoData.id}" type="button">Delete</button>
@@ -61,8 +61,8 @@ function deleteAToDo(id) {
 function updateAToDo(id) {
     const toDoForm = document.querySelector(`.js-todo-item-${id}`);
     axios.put(`/api/todos/${id}`, {
-            todo: toDoForm.value,
-        })
+        todo: toDoForm.value,
+    })
         .then((response) => {
             toDoForm.value = response.data.todo;
         })
@@ -87,7 +87,7 @@ document.addEventListener('click', (e) => {
         deleteAToDo(id);
     }
 
-    if(e.target.classList.contains('js-save-button')) {
+    if (e.target.classList.contains('js-save-button')) {
         const id = e.target.dataset.id;
         updateAToDo(id);
     }
