@@ -84,6 +84,11 @@ addForm.addEventListener('Submit', (e) => {
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('js-delete-button')) {
         const id = e.target.dataset.id;
+        deleteAToDo(id);
+    }
+
+    if(e.target.classList.contains('js-save-button')) {
+        const id = e.target.dataset.id;
         updateAToDo(id);
     }
 });
